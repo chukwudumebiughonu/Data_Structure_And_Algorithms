@@ -1,0 +1,264 @@
+// ---------------------------------------------------
+// Recursion
+// ----------------------------------------------------
+// Recursion is one of the common topic in data structure
+// and algorithm
+
+// Recursion is a function that refers to itself, it is
+// good for task that has repeated task to do 
+// It is used in searching and sorting
+// function inception(){
+//     inception();
+// }
+// inception()
+
+// The problem with recursion is that the computer needs
+// to alot memory to remember the function and this
+// can exhause the memory
+
+// Anatomy Of Recursion
+// Every recursive fucntion need to have a base case
+// Recursion has two part
+// The recursive case- which calls the function to start running
+// The base case- which calls the function to stop running 
+
+// creating a recursive case
+// let counter = 0;
+// function inception(){
+//     inception();
+// }
+// inception(); // this gives an undefined
+ 
+// let counter = 0;
+// function inception(){
+//     inception()
+//     console.log('ehllo');
+// }
+// inception(); // This give maximum call stack exceeded
+
+// let counter = 0;
+// function inception(){
+//     if(counter > 3){
+//         return 'done'
+//     }
+//     counter++;
+//     inception();
+// }
+// inception();
+
+// let counter = 0;
+// function inception(){
+//     console.log(counter)
+//     if(counter > 13){
+//         return 'done!';
+//     } // this condition statement is the base case
+//     counter++;
+//     inception();
+// }
+// inception();
+
+// Steps for creating a recursive function
+// 1. Identify the base case
+// 2. Identify the recursive case 
+// 3. Get closer and closer and return when needed. 
+// 4. There are usually two returns one 'return'
+// for the base case and another 'return for the recursive case' 
+
+// let oxford = 2;
+// function blonde(){
+//     console.log(oxford)
+//     if(oxford > 5){
+//         return 'my wife';
+//     } // the base case
+//     oxford++;
+// //     return blonde(); // the recursive case
+// }
+// blonde();
+
+
+// simple recursion 
+// let Digits = 0;
+// function Initiate(){
+//     console.log(Digits)
+//     if(Digits >13){
+//         return 'reached';
+//     }
+//     Digits++;
+//     Initiate();
+// }
+// Initiate();
+
+// Exercise
+// Write two functions that finds the factorial of any 
+// Number. One should use recursive, the other should just
+// use a for loop
+
+// creating a factorial with a recursion
+// function findFactorialRecursive(number){
+//     if(number === 2){
+//         return 2;
+//     }
+//     // console.log(number * findFactorialRecursive(number -1))
+//     return number * findFactorialRecursive(number -1);
+// }
+// findFactorialRecursive(5);
+// // finding the factorial with the for loop
+// function findFactorialIteratvie(number){
+//     let Iter = 1;
+//     for( let b = 2; b <= number; b++){
+//         Iter = Iter * b;
+//     }
+//     console.log(Iter);
+
+// }
+// findFactorialIteratvie(6);
+
+// creating a factorial with recursion 
+// function findFactorialRecursive(number){
+//     if(number === 2){
+//         return 2;
+//     }
+//     console.log(number * findFactorialRecursive(number -1))
+//     return number * findFactorialRecursive(number -1)
+//     // 
+
+    
+   
+// }
+// findFactorialRecursive(5) // This  has a big O of O(n)
+
+// creating a factorial with an iterative 
+
+// function FactorialIter(number){ this has a big O of O(n)
+//     let factos = 1;
+//     if(number === 2){
+//         return 2
+//     }
+//     for(let d = 2; d <= number; d++){
+//         factos = factos * d;
+//     }
+//     console.log(factos);
+// }
+// FactorialIter(7)
+
+// Fibonacci sequence in recursion
+// Given a number N return the index value of the Fibonacci
+// sequence, where the sequence is:
+
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 ...
+// the pattern of the sequence is that each value is the sume of 
+// the 2 previous values, that means that for N= 5 --> 2+3
+
+// creating a fibonacci sequence with a recursive function
+
+// function FibRec(n){
+//     if(n < 2){
+//         return n;
+//     }
+//     return FibRec(n-1) + FibRec(n-2)
+// }
+// FibRec(5);
+
+
+// creating a fibonacci sequence with iterative loop
+// function FibIt(n){
+//     let gen = [0, 1];
+//     for(let z = 2; z < n + 1; z++){
+//         gen.push(gen[z - 2] + gen[z -1])
+//     }
+//     return gen[n]
+// }
+// FibIt(10) big O of O(n)
+
+// creating a fibonacci sequence with  recursive
+
+
+// function funRec(n){
+//     if(n < 2){
+//         return 2;
+//     }
+//     return funRec(n - 1) + funRec(n - 2);
+// }
+// funRec(15) big O of O(2^n)
+
+// Refreshing recursion 
+// Creating recursion with iterative
+
+// function Iterative(numeral){
+//     let One = 1;
+//     if(numeral === 2){
+//         One = 2;
+//     }
+//     for(let b = 2; b <= numeral; b++){
+//         One = One + b;
+//     }
+//     console.log(One);
+//     return One;
+// }
+// Iterative(7)
+
+// Refreshing recursion with creating factorial
+
+// function RecursiveOne(numeral){
+//     if(numeral === 2){
+//         return 2
+//     }
+//     console.log(numeral * RecursiveOne(numeral -1))
+//     return numeral * RecursiveOne(numeral - 1)
+// }
+// RecursiveOne(5)
+
+// Revising recursion with fibonacci sequence
+//  Using the Recursive
+// function Recurs(n){
+//     if(n < 2){
+//         return n;
+//     }
+//     return Recurs(n -1) + Recurs(n -2)
+// }
+// Recurs(7)
+// Refreshing recursion with fibonacci sequence
+// iterative method
+// function fibIter(n){
+//     let arr = [0, 1];
+//     for(let c = 2; c < n + 1; c++){
+//         arr.push(arr[c-2] + arr[c -1])
+//     }
+//     return arr[n]
+// }
+// fibIter(7)
+
+// Anything you do with a recursion CAN be done iteratively (loop)
+// Advantages of recursion
+// It can keep your code dry
+// It enables readability
+// It is used for tree data structure and traversal
+// Disadvantage it creates large stack
+
+// When to use recursion 
+// It is used when searching or traversing trees it 
+// is better than iteration in this terms
+// Recursion is equally preferred to iteration in sorting
+// items
+
+// Rules to follow in recursion
+//   Every time you are using a tree or converting something
+// into a tree, consider recursion.
+// 1 Divided into a numeber of subproblems that are smaller
+// instances of the same problems.
+// 2. Each instance of the subproblem is identical in nature
+// 3. The solution of each subproblem can be combined to solve the problem at hand
+// The summary is divide and conquer using recursion
+
+// ***************************************************
+// Recursion is a function that calls it self
+// It creates stack over flow that is added memory space
+// It should be used when it makes code more readable
+// Anything that canc be done with recursion can be done iteratively
+// It makes sorting and tree traversal easy
+
+// They can be used in the following
+// Merge sort
+// Quick sort
+// Tree Traversal
+// Graph traversal
